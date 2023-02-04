@@ -1,0 +1,72 @@
+
+:root{
+    --background-color:#ffc700;
+    --bs-primary-rgb:#12296c;
+}
+.login{
+    width: 100vw;
+    min-height: 100vh;
+}
+.login .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.login .container form{
+    position: absolute;
+    top: 40%;
+    transform: translateY(40%);
+    width: 85vw;
+    margin: auto;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+@media(min-width:1200px){
+    .login .container form{
+        width:30vw;
+        left: 50%;
+         transform: translate(-30%,40%);
+    }  
+}
+.login .container form h3{
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.login .container form input{
+    width: 90%;
+    height:40px;
+    border: 1px solid rgb(224, 227, 231);
+    border-radius: 5px;
+    transition: .5s ease-in-out;
+    outline: none;
+}
+.login .container form input:hover{
+   border: 1px solid var(--bs-primary-rgb);
+}
+.login .container form input.btn-custom{
+    background-color: var(--bs-primary-rgb);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 40%;
+}
+.login .container form a.forget,.login .container form .signup a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: var(--bs-primary-rgb);
+    font-size: 1.4rem;
+}
+.login .container form .signup span{
+    text-transform: capitalize;
+    font-weight: bold;
+}

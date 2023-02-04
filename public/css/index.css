@@ -1,0 +1,30 @@
+
+.home {
+    position: relative;
+}
+.home .container::after{
+    content:url('/img/stars.svg');
+    position: absolute;
+    top:10px;
+    left:25vw;
+}
+.home .container h2{
+    font-size:3rem;
+}
+@media(min-width:1200px){
+    .home .container::before{
+        content:url('/img/human-1.svg');
+        position: absolute;
+        top:8px;
+        left:10vw;
+    }
+    .home .container::after{
+        content:url('/img/human-2.svg');
+        position: absolute;
+        top:8px;
+        left:75vw;
+    }
+    .home .container h2{
+        font-size:5rem;
+    }
+}

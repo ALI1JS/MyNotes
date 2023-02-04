@@ -1,0 +1,53 @@
+
+<%-include('./component/main.ejs')%>
+<%-include('./component/header.ejs')%>
+ <div class="welcome">
+    <%username.map((user)=>{%>
+    <h2>Welcome <%=user.userName%></h2>
+    <div class="container rounded bg-white mt-5">
+        <div class="row">
+            <div class="col-md-4 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img draggable="false" class="rounded-circle mt-5" src="/uploads/<%=user.avatar%>" width="90">
+                    <span class="font-weight-bold"><%=user.userName%></span>
+                    <span class="text-black-50"><%=user.email%></span>
+                    <span text-dark><%if(count>0){count.count}%> Notes</span>
+                    <a class="btn btn-primary" href="/Dashboards">Your Notes</a>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="p-3 py-5">
+                  <form action="/editAcount" method="post" enctype="multipart/form-data">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="text-right">Edit Profile</h6>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-8">
+                            <label for="email" class="pb-1" style="color: rgb(150, 154, 158);">email:</label>
+                            <input id="email" type="email" name="email" class="form-control" placeholder="username" value="<%=user.email%>">
+                        </div>
+                        <div class="col-md-8">
+                            <label for="username" class="pb-1" style="color: rgb(150, 154, 158);">Username :</label>
+                            <input id="username" type="text" name="username" class="form-control" placeholder="username" value="<%=user.userName%>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <label for="password" class="pb-1" style="color: rgb(150, 154, 158);">Password :</label>
+                        <div class="col-md-8"><input id="password" type="text" name="password" class="form-control" placeholder="password" value="<%=password%>"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <label for="avatat" class="pb-1" style="color: rgb(150, 154, 158);">Change your photo :</label>
+                        <div class="col-md-8"><input id="avatar" name="avatar" type="file" class="form-control" value="avatar"></div>
+                    </div>
+                    <div class="mt-5 text-right"><input class="btn btn-primary profile-button" type="submit" value="Save Profile"></input></div>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%})%>
+ </div>
+
+<%-include('./component/footer.ejs')%>
+<%-include('./component/tail.ejs')%>

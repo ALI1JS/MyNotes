@@ -1,0 +1,18 @@
+
+<%-include('./component/main.ejs')%>
+<%-include('./component/header.ejs')%>
+   
+<div class="addnote">
+    <div class="container-custom">
+         <form action="/addnote" method="post">
+            <h2>add your note </h2>
+            <%if(empty){%>  <%=empty%> <%}%>
+            <input name="title" type="text" placeholder="note title">
+            <textarea name="note" placeholder="note body"></textarea>
+            <input type="submit" value="add">
+         </form>
+    </div>
+</div>
+
+<%-include('./component/footer.ejs')%>
+<%-include('./component/tail.ejs')%>

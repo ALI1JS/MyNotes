@@ -1,0 +1,16 @@
+<%-include('./component/main.ejs')%>
+
+<div class="addnote">
+    <div class="container-custom">
+         <form action="/editNote/<%=Note._id%>" method="post">
+            <h2>update : <%=Note.title%></h2>
+            <input name="title" type="text" placeholder="note title" value="<%=Note.title%>">
+            <textarea name="note" placeholder="note body">
+                <%=Note.body%>
+            </textarea>
+            <input type="submit" value="save">
+         </form>
+    </div>
+</div>
+
+<%-include('./component/tail.ejs')%>

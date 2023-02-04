@@ -1,0 +1,70 @@
+<%-include('./component/main.ejs')%>
+<%-include('./component/header.ejs')%>
+   
+<div class="dashboard">
+    <div class="container-custom">
+      <%if(searchNote.length===0&&Notes.length>=0){%>
+        <div class="search row">
+            <form class="col-10" action="/notesearch" method="post">
+                <input name="keysearch" type="text" placeholder="type your notes">
+                <input class=" btn btn-primary" type="submit" value="search">
+            </form>
+            <a class=" btn btn-primary col-2" href="/addnote">Add Note</a>
+        </div>
+        <%}%>
+        <div class="notecontainer">
+             <h2>my notes</h2>
+              <div class="notes">
+           <%if(Notes.length>=0){%>
+                <% Notes.map((note)=>{%>
+                   <div class="note">
+                    <h2><%=note.title%></h2>
+                    <span><%=note.date%></span>
+                    <p style="overflow-y:hidden;height: 100px;">
+                         <%=note.body%>  ....
+                   </p>
+                   <div class="contol">
+                       <!-- <a href="/show/<%=note._id%>">show</a> -->
+                       <a href="/edit/<%=note._id%>">show</a>
+                      <div class="edit">
+                        <a data-bs-target="#delete" href="/delete/<%=note._id%>"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                      </div>
+                   </div>
+                   </div>
+               <% })%> 
+        <%}%>
+
+               <%if(Notes.length==0){%>
+                  <h3 style=" width:100%;text-transform: capitalize; text-align: center;">there are not notes you can add your note</h3>
+                <%}%>  
+              </div>
+              <!-- search notes -->
+
+              <div class="notes">
+            <%if(searchNote.length>0){%>
+                <% searchNote.map((note)=>{%>
+                   <div class="note">
+                    <h2><%=note.title%></h2>
+                    <span><%=note.date%></span>
+                    <p style="overflow-y:hidden;height: 100px;">
+                         <%=note.body%>  ....
+                   </p>
+                   <div class="contol">
+                       <a href="/edit/<%=note._id%>">show</a>
+                      <div class="edit">
+                        <a data-bs-target="#delete" href="/delete/<%=note._id%>"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                      </div>
+                   </div>
+                   </div>
+               <% })%> 
+            <%}%> 
+               <%if(searchNote.length===0&&Notes.length===0){%>
+                  <h3 style=" width:100%;text-transform: capitalize; text-align: center;">the note that you search on not exist try again</h3>
+                <%}%>  
+              </div>
+        </div>
+    </div>
+</div>
+
+<%-include('./component/footer.ejs')%>
+<%-include('./component/tail.ejs')%>

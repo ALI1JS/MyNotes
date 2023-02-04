@@ -1,0 +1,86 @@
+:root{
+    --background-color:#ffc700;
+    --bs-primary-rgb:#12296c;
+}
+.dashboard{
+    width: 100vw;
+    min-height:80vh;
+}
+.dashboard .container-custom{
+    width:90%;
+    height:100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap:80px;
+    align-items: center;
+    padding: 50px;
+}
+.dashboard .container-custom .search{
+    width: 100%;
+}
+.dashboard .container-custom .search form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0px;
+}
+.dashboard .container-custom .search form input:first-child{
+    border: 1px solid rgb(219, 223, 228);
+    border-radius: 5px;
+    height: 40px;
+    padding: 0px 10px;
+    outline: none;
+}
+
+.dashboard .container-custom .search form input:first-child{
+    width: 40%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.dashboard .container-custom .search form input:last-child{
+    width: 15%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    color: white;
+    font-weight: bold;
+}
+.dashboard .container-custom .search form input:first-child:hover{
+    border: 2px solid var(--bs-primary-rgb);
+}
+.dashboard .container-custom .notecontainer{
+    width: 100%;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    gap:50px;
+}
+.dashboard .container-custom .notecontainer .notes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+.dashboard .container-custom .notecontainer .notes .note{
+    max-width:330px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+.dashboard .container-custom .notecontainer .notes .note .contol{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.dashboard .container-custom .notecontainer .notes .note .contol a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--bs-primary-rgb);
+    font-weight: bold;
+}
+.dashboard .container-custom .notecontainer .notes .note .contol .edit a:last-child{
+    padding: 10px;
+    font-size: 1.2rem;
+}

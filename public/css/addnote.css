@@ -1,0 +1,46 @@
+
+:root{
+    --background-color:#ffc700;
+    --bs-primary-rgb:#12296c;
+}
+.addnote{
+    width: 100vw;
+    min-height:80vh;
+}
+.addnote .container-custom{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top:50px;
+}
+.addnote .container-custom form{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.addnote .container-custom form input,textarea{
+    width: 100%;
+    border: 1px solid rgb(249, 251, 253);
+    outline: none;
+    padding:0px 10px;
+    border-radius: 5px;
+}
+.addnote .container-custom form input{
+    height:40px;
+}
+.addnote .container-custom form input:last-child{
+    width:25%;
+    background-color: var(--bs-primary-rgb);
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.addnote .container-custom form textarea{
+    min-height:300px;
+    resize: none;
+}

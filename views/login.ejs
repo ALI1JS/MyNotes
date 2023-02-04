@@ -1,0 +1,22 @@
+<%-include('./component/main.ejs')%>
+<div class="login">
+  <div class="container row">
+    <form novalidate action="/postLogin" method="post" class="col-lg-4 col-sm-10">
+       <h3>sign in</h3>
+       <input name="email" type="email" placeholder="your email">
+       <input name="password" type="password" placeholder="password"/>
+        <input class="btn-custom" type="submit" value="login">
+        <a class="forget" href="/forget">forget password</a>
+         <h3>sign in with </h3>
+         <div class="icon">
+            <a href="#"> <img src="/img/google.png" alt=""> </a>
+            <a href="#"> <img src="/img/facebook.png" alt=""> </a>
+         </div>
+         <div class="signup">
+            <span>i haven't acount </span> <a href="/auth-signup-google">create acount</a>
+         </div>
+    </form>
+</div>
+</div>
+
+<%-include('./component/tail.ejs')%>

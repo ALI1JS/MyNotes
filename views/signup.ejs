@@ -1,0 +1,36 @@
+<%-include('./component/main.ejs')%>
+<div class="login">
+  <div class="container row">
+    <form novalidate action="/postSignup" method="post" class="col-lg-4 col-sm-10">
+       <h3>create acount</h3>
+         <%errors.map((err)=>{%>
+            <%if(err.param==='username'){%><div class="bg-danger text-white p-1"><%=err.msg%></div> <%}%>
+            <%})%>
+         <input name="username" type="text" placeholder="username">
+         <%errors.map((err)=>{%>
+            <%if(err.param==='email'){%><div class="bg-danger text-white p-1" ><%=err.msg%></div> <%}%>
+            <%})%>
+       <input name="email" type="email" placeholder="your email">
+       <%errors.map((err)=>{%>
+         <%if(err.param==='password'){%><div class="bg-danger text-white p-1"><%=err.msg%></div> <%}%>
+         <%})%>
+       <input name="password" type="password" placeholder="password"/>
+       <%errors.map((err)=>{%>
+         <%if(err.param==='confirm'){%><div class="bg-danger text-white p-1"><%=err.msg%></div> <%}%>
+         <%})%>
+       <input name="confirm" type="password" placeholder="confirm password"/>
+       <%if(Isexist){%> <div><%=Isexist%><%}%></div>
+        <input class="btn-custom" type="submit" value="create">
+         <h3>sign in with </h3>
+         <div class="icon">
+            <a href="#"> <img src="/img/google.png" alt=""> </a>
+            <a href="#"> <img src="/img/facebook.png" alt=""> </a>
+         </div>
+         <div class="signup">
+            <span>i have acount </span> <a href="/auth-login-google">login</a>
+         </div>
+    </form>
+</div>
+</div>
+
+<%-include('./component/tail.ejs')%>
